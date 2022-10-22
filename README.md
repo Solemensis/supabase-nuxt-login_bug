@@ -1,4 +1,4 @@
-Just enter your Supabase url/Supabase key onto .env and try to login, check console errors
+Just enter your Supabase url/Supabase key into .env and try to login, check console errors
 
 
 
