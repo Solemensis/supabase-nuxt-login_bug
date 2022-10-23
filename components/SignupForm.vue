@@ -29,9 +29,9 @@ const logout = async () => {
     <h2 style="font-size: 0.8rem; width: 90%" v-if="user">{{ user }}</h2>
     <p class="login">
       Already have an account?
-      <NuxtLink to="/login" class="loginspan" v-if="user">Login</NuxtLink>
+      <NuxtLink to="/login" class="loginspan">Login</NuxtLink>
     </p>
-    <button @click="logout()">logout</button>
+    <button @click="logout()" v-if="user">logout</button>
     <h2>
       Create Your <br />
       <span>Site</span> Account
