@@ -22,13 +22,11 @@ const signUp = async () => {
 const logout = async () => {
   const { error } = await supabase.auth.signOut();
 };
-const { data, error } = await supabase.auth.getSession();
 </script>
 
 <template>
   <div class="container">
-    <h2 style="font-size: 0.8rem; width: 90%">{{ data }}</h2>
-    <h2 style="font-size: 0.8rem; width: 90%">{{ user }}</h2>
+    <h2 style="font-size: 0.8rem; width: 90%" if="user">{{ user }}</h2>
     <p class="login">
       Already have an account?
       <NuxtLink to="/login" class="loginspan">Login</NuxtLink>

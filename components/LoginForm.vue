@@ -17,15 +17,11 @@ const login = async () => {
 const logout = async () => {
   const { error } = await supabase.auth.signOut();
 };
-
-const { data, error } = await supabase.auth.getSession();
 </script>
 
 <template>
   <div class="container">
-    <h4 style="font-size: 0.8rem; width: 90%">{{ data }}</h4>
-
-    <h4 style="font-size: 0.8rem; width: 90%">
+    <h4 style="font-size: 0.8rem; width: 90%" if="user">
       {{ user }}
     </h4>
 
