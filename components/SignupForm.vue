@@ -19,19 +19,21 @@ const signUp = async () => {
   console.log("data: ", data);
   console.log("error: ", error);
 };
+const logout = async () => {
+  const { error } = await supabase.auth.signOut();
+};
+const { data, error } = await supabase.auth.getSession();
 </script>
 
 <template>
   <div class="container">
-    <h2 style="font-size: 2rem">
-      useSupabaseUser:
-      <p style="font-size: 1.2rem">{{ user }}</p>
-    </h2>
+    <h2 style="font-size: 0.8rem; width: 90%">{{ data }}</h2>
+    <h2 style="font-size: 0.8rem; width: 90%">{{ user }}</h2>
     <p class="login">
       Already have an account?
       <NuxtLink to="/login" class="loginspan">Login</NuxtLink>
     </p>
-
+    <button @click="logout()">logout</button>
     <h2>
       Create Your <br />
       <span>Site</span> Account
@@ -48,7 +50,7 @@ const signUp = async () => {
 .container {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 0.2rem;
   justify-content: center;
   align-items: center;
   height: 100vh;

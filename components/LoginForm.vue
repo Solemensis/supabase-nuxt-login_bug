@@ -23,17 +23,17 @@ const { data, error } = await supabase.auth.getSession();
 
 <template>
   <div class="container">
-    <h3>session: {{ data }}</h3>
-    <button @click="logout()">logout</button>
-    <h2 style="font-size: 2rem">
-      useSupabaseUser:
-      <p style="font-size: 1.2rem">{{ user }}</p>
-    </h2>
+    <h4 style="font-size: 0.8rem; width: 90%">{{ data }}</h4>
+
+    <h4 style="font-size: 0.8rem; width: 90%">
+      {{ user }}
+    </h4>
 
     <p class="register">
       Don't have an account?
       <NuxtLink to="/" class="registerspan">Register</NuxtLink>
     </p>
+    <button @click="logout()">logout</button>
     <h2>
       Login to
       <span>Site</span>
@@ -49,7 +49,7 @@ const { data, error } = await supabase.auth.getSession();
 .container {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  row-gap: 0.2rem;
   justify-content: center;
   align-items: center;
   height: 100vh;
