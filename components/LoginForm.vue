@@ -13,10 +13,15 @@ const login = async () => {
   console.log("data: ", data);
   console.log("error: ", error);
 };
+
+const logout = async () => {
+  const { error } = await supabase.auth.signOut();
+};
 </script>
 
 <template>
   <div class="container">
+    <button @click="logout()">logout</button>
     <h2 style="font-size: 2rem">
       useSupabaseUser:
       <p style="font-size: 1.2rem">{{ user }}</p>
