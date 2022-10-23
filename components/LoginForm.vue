@@ -21,7 +21,7 @@ const logout = async () => {
 
 <template>
   <div class="container">
-    <h4 style="font-size: 0.8rem; width: 90%" if="user">
+    <h4 style="font-size: 0.8rem; width: 90%" v-if="user">
       {{ user }}
     </h4>
 
@@ -29,7 +29,7 @@ const logout = async () => {
       Don't have an account?
       <NuxtLink to="/" class="registerspan">Register</NuxtLink>
     </p>
-    <button @click="logout()">logout</button>
+    <button @click="logout()" v-if="user">logout</button>
     <h2>
       Login to
       <span>Site</span>
