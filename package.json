@@ -8,11 +8,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/supabase": "^0.2.1",
+    "@nuxtjs/supabase": "^0.2.5",
     "nuxt": "^3.0.0-rc.11"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.0.4",
+    "@supabase/supabase-js": "^2.1.0",
     "nuxt3": "^3.0.0-rc.13-27772354.a0a59e2"
   }
 }
